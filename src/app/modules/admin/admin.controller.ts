@@ -2,22 +2,22 @@ import { Request, RequestHandler, Response } from 'express'
 import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import { StatusCodes } from 'http-status-codes'
-import { userService } from './users.service'
+import { adminsServices } from './admin.services'
 
-const createUsers: RequestHandler = catchAsync(
+const createAdmins: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { ...user } = req.body
-    const result = await userService.createUserDB(user)
+    const { ...admins } = req.body
+    const result = adminsServices.createAdminsDB(admins)
 
     sendResponse(res, {
       StatusCode: StatusCodes.OK,
       success: true,
-      message: 'successfully created user !',
+      message: 'Admin created Successfully !',
       data: result,
     })
   },
 )
 
-export const usersController = {
-  createUsers,
+export const adminControllers = {
+  createAdmins,
 }
