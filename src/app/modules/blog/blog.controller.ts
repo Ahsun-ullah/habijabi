@@ -2,22 +2,21 @@ import { Request, RequestHandler, Response } from 'express'
 import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import { StatusCodes } from 'http-status-codes'
-import { adminsServices } from './admin.services'
+import { blogService } from './blog.service'
 
-const createAdmins: RequestHandler = catchAsync(
+const createBlog: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { ...admins } = req.body
-    const result = await adminsServices.createAdminsDB(admins)
+    const { ...blogs } = req.body
+    const result = await blogService.createBlogsDB(blogs)
 
     sendResponse(res, {
       StatusCode: StatusCodes.OK,
       success: true,
-      message: 'Admin created Successfully !',
+      message: 'Blogs created successfully !',
       data: result,
     })
   },
 )
-
-export const adminControllers = {
-  createAdmins,
+export const blogController = {
+  createBlog,
 }

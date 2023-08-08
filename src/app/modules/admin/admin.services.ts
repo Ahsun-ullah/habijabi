@@ -2,7 +2,7 @@ import { IAdmin } from './admin.interface'
 import { adminModelSchema } from './admin.model'
 
 const createAdminsDB = async (admin: IAdmin) => {
-  const result = adminModelSchema.admin.create(admin)
+  const result = await adminModelSchema.admin.create(admin)
   return result
 }
 
