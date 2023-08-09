@@ -13,9 +13,6 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/api/v1', router, function (req, res) {
-  console.log(req.body)
-  res.send('data created successfully by manual ')
-})
+app.use('/api/v1', router)
 
 export default app

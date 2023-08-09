@@ -1,7 +1,6 @@
 import { Model } from 'mongoose'
 
 export type IAdmin = {
-  id: string
   name: string
   email: string
   password: string
