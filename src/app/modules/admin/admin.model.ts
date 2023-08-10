@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
-import { IAdmin, adminModel } from './admin.interface'
+import { Schema, model } from 'mongoose';
+import { IAdmin, adminModel } from './admin.interface';
 
 const adminSchema = new Schema<IAdmin>(
   {
@@ -13,10 +13,10 @@ const adminSchema = new Schema<IAdmin>(
       virtuals: true,
     },
   },
-)
+);
 
-const admin = model<IAdmin, adminModel>('admin', adminSchema)
+const admin = model<IAdmin, adminModel>('admin', adminSchema);
 
 export const adminModelSchema = {
   admin,
-}
+};

@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
-import { IBlog, blogModel } from './blog.interface'
+import { Schema, model } from 'mongoose';
+import { IBlog, blogModel } from './blog.interface';
 
 const blogSchema = new Schema<IBlog>(
   {
@@ -26,10 +26,10 @@ const blogSchema = new Schema<IBlog>(
       virtuals: true,
     },
   },
-)
+);
 
-const blog = model<IBlog, blogModel>('Blog', blogSchema)
+const blog = model<IBlog, blogModel>('blog', blogSchema);
 
 export const blogModelSchema = {
   blog,
-}
+};
